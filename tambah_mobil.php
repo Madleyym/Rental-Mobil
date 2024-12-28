@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include './views/header.php'; ?>
 
     <div class="container mt-5">
         <div class="card">
