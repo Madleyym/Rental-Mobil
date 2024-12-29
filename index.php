@@ -7,8 +7,27 @@ require_once 'functions.php';
 
 session_start();
 
-if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
-    header('Location: login.php');
+// Fungsi pengecekan timeout
+function checkSessionTimeout()
+{
+    $timeout = 300; // 5 menit dalam detik
+
+    if (isset($_SESSION['last_activity'])) {
+        $inactive_time = time() - $_SESSION['last_activity'];
+        if ($inactive_time >= $timeout) {
+            session_unset();
+            session_destroy();
+            return false;
+        }
+    }
+
+    $_SESSION['last_activity'] = time();
+    return true;
+}
+
+// Cek login dan timeout
+if (!isset($_SESSION['login']) || $_SESSION['login'] !== true || !checkSessionTimeout()) {
+    header('Location: login.php?timeout=1');
     exit;
 }
 
@@ -104,7 +123,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
     </nav>
 
     <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/index.php -->
-     
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-3 mb-4">
