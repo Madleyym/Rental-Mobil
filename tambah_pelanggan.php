@@ -70,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <a href="index.php" class="btn btn-secondary">Kembali</a>
                     </div>
                 </form>
+                <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/tambah_pelanggan.php -->
             </div>
         </div>
     </div>

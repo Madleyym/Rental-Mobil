@@ -77,8 +77,6 @@ if ($conn->connect_error) {
 }
 ?>
 
-?>
-
 <!-- Rest of the HTML remains the same -->
 
 <!DOCTYPE html>
@@ -120,6 +118,7 @@ if ($conn->connect_error) {
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
+                <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/login.php -->
             </div>
         </div>
     </div>

@@ -102,6 +102,7 @@ $result = $conn->query($query);
                                 <th width="200">Aksi</th>
                             </tr>
                         </thead>
+                        <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/rental.php -->
                         <tbody>
                             <?php if ($result->num_rows > 0): ?>
                                 <?php while ($row = $result->fetch_assoc()): ?>

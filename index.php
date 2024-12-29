@@ -8,7 +8,7 @@ require_once 'functions.php';
 session_start();
 
 if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
-    header('Location: login.php'); 
+    header('Location: login.php');
     exit;
 }
 
@@ -23,6 +23,56 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
     <title>Rental Mobil - Tryandaasu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" rel="stylesheet">
+    <style>
+        .car-container {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 60%, #90EE90 60%, #90EE90 100%);
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .car {
+            position: absolute;
+            bottom: 10px;
+            animation: driveCar 15s linear infinite;
+        }
+
+        @keyframes driveCar {
+            from {
+                left: -150px;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        .wheel {
+            animation: wheelRotate 1s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes wheelRotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .card {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 
 <body>
@@ -53,6 +103,8 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
         </div>
     </nav>
 
+    <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/index.php -->
+     
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-3 mb-4">
@@ -104,6 +156,23 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Animasi Mobil -->
+    <div class="car-container">
+        <svg class="car" width="120" height="60" viewBox="0 0 120 60">
+            <!-- Car Body -->
+            <rect x="10" y="20" width="100" height="25" fill="#FF4136" rx="5" />
+            <rect x="70" y="10" width="40" height="20" fill="#FF4136" rx="3" />
+            <!-- Windows -->
+            <rect x="75" y="12" width="30" height="15" fill="#7FDBFF" />
+            <!-- Wheels -->
+            <circle class="wheel" cx="30" cy="45" r="8" fill="#111" />
+            <circle class="wheel" cx="90" cy="45" r="8" fill="#111" />
+            <!-- Headlights -->
+            <rect x="100" y="25" width="10" height="8" fill="#FFDC00" />
+        </svg>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

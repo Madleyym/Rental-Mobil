@@ -69,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         <a href="index.php" class="btn btn-secondary">Kembali</a>
                     </div>
+                    <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/tambah_mobil.php -->
                 </form>
             </div>
         </div>

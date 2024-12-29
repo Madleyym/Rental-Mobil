@@ -102,6 +102,7 @@ $result_mobil = $conn->query($query_mobil);
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         <a href="index.php" class="btn btn-secondary">Kembali</a>
                     </div>
+                    <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/tambah_rental.php -->
                 </form>
             </div>
         </div>

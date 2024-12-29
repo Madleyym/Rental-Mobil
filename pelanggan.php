@@ -117,6 +117,7 @@ $result = $conn->query($query);
                                     <td colspan="5" class="text-center">Tidak ada data pelanggan</td>
                                 </tr>
                             <?php endif; ?>
+                            <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/pelanggan.php -->
                         </tbody>
                     </table>
                 </div>
