@@ -77,8 +77,6 @@ if ($conn->connect_error) {
 }
 ?>
 
-<!-- Rest of the HTML remains the same -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,21 +86,68 @@ if ($conn->connect_error) {
     <title>Login - Rental Mobil Tryandaasu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8f9fa;
+        .demo-credentials {
+            margin-top: 20px;
+            text-align: center;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border: 2px dashed #2196f3;
+            border-radius: 10px;
         }
 
-        .login-container {
-            max-width: 400px;
-            margin: 100px auto;
+        .demo-credentials p {
+            color: #1976d2;
+            font-size: 15px;
+            margin: 0;
+            padding: 3px 0;
+        }
+
+        .demo-credentials .highlight {
+            font-weight: bold;
+            color: #1565c0;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .shine-effect {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 200%;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="login-container">
-        <div class="card shadow">
-            <div class="card-body">
+        <div class="card">
+            <div class="card-body p-4">
                 <h2 class="text-center mb-4">Login Admin</h2>
                 <?php if (isset($error)): ?>
                     <div class="alert alert-danger"><?php echo $error; ?></div>
@@ -118,7 +163,12 @@ if ($conn->connect_error) {
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
-                <!-- https://github.com/Madleyym/Rental-Mobil/blob/main/login.php -->
+
+                <div class="demo-credentials">
+                    <p>Demo Account:</p>
+                    <p><span class="highlight">Username:</span> admin</p>
+                    <p><span class="highlight">Password:</span> admin</p>
+                </div>
             </div>
         </div>
     </div>
